@@ -1,0 +1,35 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block content %}
+
+	<div class="jumbotron jumbotron-fluid text-center">
+       <h1 class="display-4">Islamic Dawah - The Call to Hidayah </h1>
+       <p class="lead"> Welcome, Guest.</p>
+       <hr class="my-4">
+       <p>This is a simple website designed to help you get a little bit of the vast Islamic Knowldge.
+		  Feel free to ask questions through our contact form, but before that explore the blog posts for
+		   your answer. 
+		</p>
+       {% comment %} <p class="lead">
+          <a class="btn btn-primary btn-lg" href="#" role="button">Continue</a>
+       </p> {% endcomment %}
+    </div>
+
+	<div class="justify-content-center">
+	<div class="container h-100">
+      {% for post in posts %}
+      <div class="card">
+         <h5 class="card-header"> {{post.title}} </h5>
+         <div class="card-body">
+           {% comment %} <h5 class="card-title">  </h5> {% endcomment %}
+           <p class="card-text"> {{ post.description }} </p>
+           <a href="{% url 'post_detail' post.pk %}" class="btn btn-primary">Read More</a>
+         </div>
+       </div>
+       <br> <br>
+       {% endfor %}
+	</div>
+		
+</div>
+
+{% endblock content %}

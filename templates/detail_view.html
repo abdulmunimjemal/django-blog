@@ -1,0 +1,35 @@
+{% extends 'navbar.html' %}
+{% load markdown_extras %}
+{% block content %}
+
+	<div class="container">
+	<div class="col-sm-9 col-sm-offset-7 col-md-9">
+<br>
+          <div class="blog-post">
+            <h2 class="blog-post-title">{{ post.title }}</h2>
+            <p class="blog-post-meta">Posted at {{ post.created_at }} by <a href="#">{{ post.author }}</a></p>
+
+            <article>
+              <div class="article-info"> 
+                {{post.body | markdown | safe }}
+              </div>
+               </articel>
+          </div><!-- /.blog-post -->
+
+
+          <nav class="blog-pagination">
+            <center>
+            {% if post.pk|add:"-1" == 0 %}
+            <a class="btn btn-outline-secondary disabled" href="#">Previous</a>
+            {% elif post.pk|add:"-1" > 0%}
+            <a class="btn btn-outline-secondary" href="{% url 'post_detail' post.pk|add:"-1" %}">Previous</a>
+            {% endif %}
+
+            <a class="btn btn-outline-primary" href="{% url 'post_detail' post.pk|add:"+1" %}">Next</a>
+            </center>
+          </nav>
+
+        </div>
+	</div>
+{% endblock content %}
+

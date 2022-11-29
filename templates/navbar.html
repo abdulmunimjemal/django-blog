@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Islamic Blog - The Call to Hidayah </title>
+
+    <!-- Bootstrap -->
+    <style>
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css');
+               html,
+               body {
+               height: 100%
+               }
+            </style>
+    <link href="{% static 'css/bootstrap-4.4.1.css' %}" rel="stylesheet">
+
+  </head>
+
+  <body class="d-flex flex-column h-100">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+       <a class="navbar-brand" href="{% url 'home' %}">Islamic Blog</a>
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+             <li class="nav-item active">
+                <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+             </li>
+             <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+             </li>
+
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+       </div>
+    </nav>
+
+    {% block content %}
+    {% endblock content %}
+
+ <div class="row">
+          <div class="text-center col-lg-6 offset-lg-3 mt-auto py-3 ">
+             <p>Copyright &copy; 2022 &middot; All Rights Reserved &middot; <a href="{% url 'home' %}" >Islamic Dawah</a></p>
+          </div>
+       </div>
+
+      </body>
+</html>
