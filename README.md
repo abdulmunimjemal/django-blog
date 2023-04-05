@@ -1,19 +1,26 @@
-# django-blog
+# Django-blog
  This is my first python django-based blog. 
 
-first install pipenv
-pip install pipenv
-when it finishes, run the following commands
-pipenv install django~=3.1.0
-pipenv install markdown==3.2.1
-pipenv install django-markdownx
-pipenv shell
+## First install pipenv 
+     pip install pipenv
 
-Then do this:
+## Then, run the following commands 
+(it will install all the required dependencies within the environment)
+```
+     pipenv install django~=3.1.0
+     pipenv install markdown==3.2.1
+     pipenv install django-markdownx
+```
 
-python manage.py makemigrations
-python manage.py migrate
-python manage.py createsuperuser  (then create an admin account)
-python manage.py runserver  ( adn then visit localhost:5000/admin and login, then continue to make your posts)
-
-#AAiT
+## and Finally,:
+continue
+```
+   pipenv shell
+   python manage.py makemigrations
+   python manage.py migrate
+   python manage.py createsuperuser  (then create an admin account)
+   python manage.py runserver  ( then just visit localhost:5000/admin and login, then continue to make your posts)
+  ```
+  
+  
+#AAiT #beginner
